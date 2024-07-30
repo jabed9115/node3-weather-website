@@ -6,6 +6,7 @@ import { getGeoCode } from "./utils/geocode.mjs";
 import { forecast } from "./utils/forecast.mjs";
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // define path for experess config
 const publicFolder = path.join(process.argv[1],'../../public');
@@ -103,6 +104,7 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () =>{
-    console.log('Listening on port: 3000');
+
+app.listen(port, () =>{
+    console.log('Listening on port: '+port);
 });
